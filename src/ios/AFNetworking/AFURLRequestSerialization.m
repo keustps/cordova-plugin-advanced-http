@@ -1236,7 +1236,9 @@ typedef enum {
             [mutableRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         }
 
-        [mutableRequest setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:self.writingOptions error:error]];
+        //[mutableRequest setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:self.writingOptions error:error]];
+        //Avoid default JSON serialization
+        [mutableRequest setHTTPBody: [parameters dataUsingEncoding:NSUTF8StringEncoding]];
     }
 
     return mutableRequest;
