@@ -399,6 +399,15 @@ forHTTPHeaderField:(NSString *)field;
 #pragma mark -
 
 /**
+ `AFRAWRequestSerializer` is a subclass of `AFHTTPRequestSerializer` that keep parameter with no modifications
+ */
+@interface AFRAWRequestSerializer : AFHTTPRequestSerializer
+
+@end
+
+#pragma mark -
+
+/**
  `AFPropertyListRequestSerializer` is a subclass of `AFHTTPRequestSerializer` that encodes parameters as JSON using `NSPropertyListSerializer`, setting the `Content-Type` of the encoded request to `application/x-plist`.
  */
 @interface AFPropertyListRequestSerializer : AFHTTPRequestSerializer
